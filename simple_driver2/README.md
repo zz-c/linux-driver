@@ -27,11 +27,14 @@ dmesg | tail
 gcc -o simple_driver_test simple_driver_test.c
 ```
 
-##设备文件创建
+## 设备文件创建
 ```bash
+# c表示字符设备，块设备则用b，100 是主设备号，0 是次设备号
 sudo mknod /dev/simple_driver c 100 0
 # 使设备文件对所有用户可读写
 sudo chmod 666 /dev/simple_driver
+# 删除设备文件
+sudo rm /dev/simple_driver
 ```
 
 ## 运行测试
